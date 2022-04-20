@@ -1,0 +1,52 @@
+
+
+                                Git y GitHub
+
+-----------------Crear un repositorio de Git y haz tu primer commit----------------- 
+
+En la carpeta principal de nuestro proyecto, debemos usar el comando:
+			                    
+                                ‘git init’
+
+Entonces, creará unas carpetas ocultas que guardará los cambios atómicos de nuestro proyecto. 
+
+Con el comando :
+
+                                'git status'
+
+podemos, evidentemente; ver el status del proyecto. En este caso, git detectará que agramos un 
+nuevo archivo, pero éste aún no ha sido agregado (commit) al repositorio, con lo cual, primero 
+debemos agregarlo con el comando:
+
+                                'gti add'
+
+Pero aún no ha sido subido (commit) al repositorio, se encuentra en la memoria ram, a este estado de
+lo conocemos como: 'cached' << o algo así>>. al volver a ver el status del archivo, estára dentro de 
+los estados (has been cached).
+Si queremos deshacernos de la base que va ser mandada al repositorio, tenenmos el comando:
+
+                        'git rm --cached <file>' -> unstage
+
+Ahora que el archivo que está en estado 'cached', podemos subirlo (commit), con el comando:
+
+                                'git commit'
+
+Si bien con esto es suficiene, se considera una buena práctica dejar un mensaje con cada commit, simplemente
+agregando -m "<mensaje>" PEEEEEEEEERO nos falta algo muy importante que no nos dejará completar el commit
+hasta que nos identifiquemos con Git agregando nuesto nombre correo etc...
+
+Con el comando: 
+                                
+                                "git config"
+
+sólo nos dirá como funciona el comando pero, con el comando: 
+
+                                "git config --list" 
+
+nos dará las configuraciones por defecto de nuestro git.
+También con: 
+
+                            "git config --list --show-origin 
+
+Podremos ver dónde se encuenran las configuraciones (rutas), pero  esto es más avanzado y ahora no nos interesan.
+P
