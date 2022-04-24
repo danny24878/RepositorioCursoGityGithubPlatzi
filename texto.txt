@@ -75,3 +75,17 @@ para despúes:
 
 ------------------------- Analizar cambios en los archivos en e proyecto con Git --------------------------
 
+El comando: 
+                                    "git show" 
+
+nos muestra los cambios que han existido sobre un archivo y es muy útil para detectar cuándo se produjeron ciertos
+cambios, qué se rompió y cómo lo podemos solucionar. Pero podemos ser más detallados.
+
+Si queremos ver la diferencia entre una versión y otra, no necesariamente todos los cambios desde la creación del
+archivo, podemos usar el comando:
+                                    "git diff <commit a> <commit b >"
+
+donde "<commit a>" y "<commit b> son los ID. Es siempre recomendable utilizar los commit más viejos al principio, 
+de esta manera, es más fácil e intuitivo leer lo que nos devuelve git ya que, git toma el primer commit como el más 
+antíguo de ambos.
+
