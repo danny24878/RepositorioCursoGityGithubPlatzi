@@ -75,4 +75,3 @@ para despúes:
 
 ------------------------- Analizar cambios en los archivos en e proyecto con Git --------------------------
 
-sadsfasfasdfasdfasdfsdfas
