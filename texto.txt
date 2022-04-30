@@ -89,3 +89,37 @@ donde "<commit a>" y "<commit b> son los ID. Es siempre recomendable utilizar lo
 de esta manera, es más fácil e intuitivo leer lo que nos devuelve git ya que, git toma el primer commit como el más 
 antíguo de ambos.
 
+------------------------ Branch(rama) y cómo funciona un Merge en Git -----------------------------
+
+Cuando creas tu repositorio en tu carpeta de trabajo, se crea, por defecto; una rama (Branch) principal llamada Masternica
+
+Branch se puede ver como la linea principal de nuestro proyectos creada por los commits hechos anteriormente.
+
+Podemos crear varios branch a traves del main (nombre que se le dá a la rama principal o master al momento de empezar a 
+ramificar en la misma) y cada nuevo branch tiene sus propios commits. 
+
+Por lo general, se puede hacer una rama, llamada " development"; basada en la ramma main y la cual tinene como propósito 
+hacer cambios y modificaciónes a nuestro proyecto sin afectar al branch main <<experimentar>>
+
+En dado caso de hallar un error en el branch main tal que, afecte al proyecto de forma considerable, podemos crear una rama 
+llamada " bug fixing " o " hot fix " para hacer los arreglos necesarios para posteriormente, integrarlos a la ramma main para
+que los cambios sean aplicados, utilizando el comando: 
+
+                                            "merge"
+
+el cual, combina los cambios del branch bug fix con el branch main
+
+Producir una nueva rama se le conoce como " Checkout "  y a unir dos ramas como " Merge " y al hacer este último, generamos una nueva 
+rama de nuestro branch main que ya tiene todas las modificaciónes del branch en cuestión
+
+Gracias que podemos ramificar, modificar y juntar otras ramas un sin fin de veces, junto con el hecho de que podemos acudir a 
+veersiones anteriores de nuestro proyecto, podemos aprovechar el registro de cambios, podemos traer versiones viejas de nuesto proyecto, 
+arreglarlas y volverlas a unir para mejorarlo (entre otra infinita posibilidad de usos). 
+Pero, tenemos el riesgo de cometer errores al momento de hacer un merge y este no salga como planeamos por lo que nuesta intervención 
+directa será necesária. 
+
+
+------------------------ Volver a versiones pasadas de nuestro repositorio utilizando reset y checkout --------------------------------
+
+
+
