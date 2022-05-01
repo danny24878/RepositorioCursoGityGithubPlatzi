@@ -134,7 +134,11 @@ con el argumento:
 
                                  "--hard"
 
-directamente borramos toda la información de nuestro staging permanentemente. Lo cual podemos confirmar con git log en
+directamente borramos toda la información de nuestro staging permanentemente. Lo cual podemos confirmar con git log
+
+Para poder los cambios específicos de cada archivo para cada commit con:
+                            
+                                 "git log --stat"
 
 
 
