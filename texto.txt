@@ -121,5 +121,25 @@ directa será necesária.
 
 ------------------------ Volver a versiones pasadas de nuestro repositorio utilizando reset y checkout --------------------------------
 
+Primero, podemos ver todos los commits con sus I.D hechos enlistados con:
+
+                                 "log" 
+
+Tomando el I.D. de alguún commit anterir. Podemos regrear a una versión anterior. Con el comando
+
+                                " git reset " + "< I.D. >" + "--soft"
+
+el cual, mantiene el archivo original en staging para que podamos aplicar nuestros últimos cambios pero desde el commit anterior. Mietras que
+con el argumento: 
+
+                                 "--hard"
+
+directamente borramos toda la información de nuestro staging permanentemente. Lo cual podemos confirmar con git log en
+
+
+
+
+
+
 
 
