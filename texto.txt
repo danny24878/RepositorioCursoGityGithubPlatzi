@@ -23,15 +23,17 @@ debemos agregarlo con el comando:
 Pero aún no ha sido subido (commit) al repositorio, se encuentra en la memoria ram, a este estado de
 lo conocemos como: 'cached' << o algo así>>. al volver a ver el status del archivo, estára dentro de 
 los estados (has been cached).
+
+*si queremos agregar todo el archivo, es suficiente con con: git add .*
+
 Si queremos deshacernos de la base que va ser mandada al repositorio, tenenmos el comando:
 
-                        'git rm --cached <file>' -> unstage
+                        'git rm --cached <file>' -> unstage (donde stage significa que ha sido agragado al cached)
 
 Ahora que el archivo que está en estado 'cached', podemos subirlo (commit), con el comando:
 
                                 'git commit'
-
-Si bien con esto es suficiene, se considera una buena práctica dejar un mensaje con cada commit, simplemente
+Sin embargo, es no suficiene, se considera una buena práctica dejar un mensaje con cada commit, simplemente
 agregando -m "<mensaje>" PEEEEEEEEERO nos falta algo muy importante que no nos dejará completar el commit
 hasta que nos identifiquemos con Git agregando nuesto nombre correo etc...
 
@@ -190,4 +192,3 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 ----------------------------- Fusión de ramas con Git -------------------------------------------
 
-s
