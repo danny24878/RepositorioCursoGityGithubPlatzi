@@ -18,7 +18,7 @@ podemos, evidentemente; ver el status del proyecto. En este caso, git detectará
 nuevo archivo, pero éste aún no ha sido agregado (commit) al repositorio, con lo cual, primero 
 debemos agregarlo con el comando:
 
-                                'gti add'
+                                'Git add'
 
 Pero aún no ha sido subido (commit) al repositorio, se encuentra en la memoria ram, a este estado de
 lo conocemos como: 'cached' << o algo así>>. al volver a ver el status del archivo, estára dentro de 
@@ -51,11 +51,11 @@ También con:
 Podremos ver dónde se encuenran las configuraciones (rutas), pero  esto es más avanzado y para hacerlo, tenemos el 
 comando:                    
 
-                            " git config --global user.name "<usser>" "
+                            " git config --global user.name <usser> "
 
 Así como:
 
-                            " git config --globla user.email "<email usser> "
+                            " git config --globla user.email <email usser> "
 
 Finalmente, daremos otros comandos que pueden ser de utilidad:
 
@@ -190,4 +190,4 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 ----------------------------- Fusión de ramas con Git -------------------------------------------
 
-
+s
