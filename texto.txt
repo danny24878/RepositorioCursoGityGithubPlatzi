@@ -76,11 +76,16 @@ para despúes:
 
 
 ------------------------- Analizar cambios en los archivos en e proyecto con Git --------------------------
+Con el comando: 
+                                "git log <archivo>"
+Podemos ver todos los commits que hemos hecho en nuestro archivo donde señala su TAG, rama, autor, fecha y mensaje 
+con el que fue subido al repositorio
 
 El comando: 
+
                                     "git show" 
 
-nos muestra los cambios que han existido sobre un archivo y es muy útil para detectar cuándo se produjeron ciertos
+nos muestra los cambios que han existido sobre un archivo de nuestro último commit y es muy útil para detectar cuándo se produjeron ciertos
 cambios, qué se rompió y cómo lo podemos solucionar. Pero podemos ser más detallados.
 
 Si queremos ver la diferencia entre una versión y otra, no necesariamente todos los cambios desde la creación del
@@ -192,3 +197,4 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 ----------------------------- Fusión de ramas con Git -------------------------------------------
 
+a
