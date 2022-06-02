@@ -151,7 +151,7 @@ El comando:
 
                             "git checkout + <I.D.> + <file>"
 
-Nos permite ver el arcivo en ese momento. Hay que tener cuidado, ya que al hacer un commit, borrará el de nuestro staging y será remplazado por lo que cambie en el
+Nos permite ver el arcivo en ese momento. Hay que tener cuidado, ya que al NO hacer un commit, borrará el de nuestro staging y será remplazado por lo que cambie en el
 commit que nos encontramos.
 Para eso, basta con usar :
 
@@ -203,3 +203,4 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 para saltarnos el "add" ####################
 
+ 
