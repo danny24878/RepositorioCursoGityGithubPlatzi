@@ -197,4 +197,9 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 ----------------------------- Fusión de ramas con Git -------------------------------------------
 
-a
+######## si ya hemos hecho un "add" a nuestro proyecto anteriormente, podemos usar
+
+                                "git commit -am "<mensaje>"
+
+para saltarnos el "add" ####################
+
