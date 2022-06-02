@@ -203,4 +203,4 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 para saltarnos el "add" ####################
 
- 
+Podemos crear una rama a partir de donde estémos, con 
