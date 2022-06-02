@@ -203,4 +203,28 @@ el repositorio mantendrá el archivo (no con sus últimos cambios, pero sí con 
 
 para saltarnos el "add" ####################
 
-Podemos crear una rama a partir de donde estémos, con 
+ El comando: git merge, nos permite crear un nuevo commit con la combinación de dos ramas (la rama donde nos encotramos como base, con la rama que llamemos).
+ Primero, para crear unar rama, solo necesitamos el comando
+                                        
+                                    git branch + <name>
+
+Si querémos ver una lista de todas las ramas,así como nuestra ubicación dentro de estas, sólo necesitamos usar "git branch +
+Una vez creada nuestra nueva rama, podemos movernos a otra con "git checkout + <name>" (de la rama que deseamos ir).
+finalmente, para juntar las ramas, lo hacemos con 
+
+                                    git merge + <name> (de la que deseamos traer)
+
+########
+
+Recordemos que podemos borrar commit(s) con 
+                                    
+                                git reset + <name> 
+
+y ramas con                     
+                                git branch -d + <name> 
+
+finalmente, para revertir un "merge", basta con
+
+                                git merge --abort
+
+                                
