@@ -4,7 +4,7 @@
 
 -----------------Crear un repositorio de Git y haz tu primer commit----------------- 
 
-En la carpeta principal de nuestro proyecto, debemos usar el comando:
+En la carpeta(ra) principal de nuestro proyecto, debemos usar el comando:
 			                    
                                 ‘git init’
 
@@ -98,7 +98,7 @@ antíguo de ambos.
 
 ------------------------ Branch(rama) y cómo funciona un Merge en Git -----------------------------
 
-Cuando creas tu repositorio en tu carpeta de trabajo, se crea, por defecto; una rama (Branch) principal llamada Masternica
+Cuando creas tu repositorio en tu carpeta(ra) de trabajo, se crea, por defecto; una rama (Branch) principal llamada Masternica
 
 Branch se puede ver como la linea principal de nuestro proyectos creada por los commits hechos anteriormente.
 
@@ -227,4 +227,43 @@ finalmente, para revertir un "merge", basta con
 
                                 git merge --abort
 
-                                
+-------------------------------------- Introducción a GitHub ----------------------------------------
+
+Para subir proyectos a GitHub, debemos tener preparado el línk en HTTPS de nuestro repositorio remoto y agregarlo con el comando:
+
+                            git remote add <origin> + URL 
+
+ Donde <origin> es el nombre de que resibirá nuestra ruta (URL) donde harémos push y pull
+
+$$$$$$$$$$$$$ Disclamer $$$$$$$$$$$$$$$$
+
+A lo largo de las notas, hemos utilizado el nombre de master como carpeta(ra) principal de trabajo, sin embargo por cuestiones políticas y sencibilidad al movimiento BLM (2021), 
+éste ya no va a ser el nombre para la carpeta(ra) principal que estarémos utilizando para esta carpeta(ram) en GitHub, el cual lleva el nombre de main; por lo que tenemos dos opciónes
+
+1. Cambiar el nombre de nuestra carpeta(rama), en el repositorio local con:
+
+                                git branch -m master main
+
+2. Cambiar el nombre de la carpeta o rama principal desde GitHub, pero con el incombeniente de que lo hará para todos los repositorios, sin mencionar que es posible que tengas problemas 
+y debas hacer nuevamente ese repositorio.
+
+3. Mandar nuestra rama 'master' de nuestro repositorio local a la rama 'main' del repositorio remoto de GitHub, pero el problema de esta opción, es que siempre que hagamos 'push' y 'pull'
+debemos referirnos a la rama 'main' (pues es la del servidor remoto).
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Verificamos que la URL se haya guardado:    
+
+                    git remote (+ -v (v de be verbal si queremos ver las URL de push y pull)
+
+Debemos traer la versión del repositorio remoto y hacemos merge para crear un commit con los archivos de ambas partes. Podemos usar 'git fech' y 'git merge' o 
+
+                    git pull origin master --allow-unrelated-histories
+
+esto es para forzar el merge entre ramas del repositorio remoto con el local.
+
+Finalmente podemos guardar nuetro escritorio local con 
+
+                    git push origin master(:main)
+
+
