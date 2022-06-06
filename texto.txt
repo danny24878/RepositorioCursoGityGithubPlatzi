@@ -268,5 +268,57 @@ Finalmente podemos guardar nuetro escritorio local con
 
 --------------------------------- Configurar llaves SSH en local -------------------------------
 
-sssss
+Recordemos que las llaves SSH son por máquina, por lo que es importante que tengas configurado tanto tu repositorio local como el repositorio remoto con tu correo personal. 
+Además, por lo mismo; se debe agregregar a la carpeta principal (home)
+
+Para crear la llave SSH, utilizamos el comando:
+
+                                ssh-key -t rsa -b 4096 -C "<usermail>"
+
+Al imbocarlo, nos va a decir en qué carpeta podemos agregar la llave ".ssh" y podremos poner una contraseña (opcional). De ahí, buscamos la llave pública, la copiamos y la agregamos 
+a nuestro repositorio en GitHub, pero antes de eso, debemos de llevar la llave privada a nuestro entorno (máquina o sistéma operativo). 
+
+En windows/linux debemos revisar que el servidor de llaves esté en funcionamiento con 
+
+                                eval $(ssh-agent -s)
+
+donde "Agent" significa que el servidor ssh está corriendo, "pid" (proces id o identificador del proceso) junto con un número, es, en efecto; el número de proceso que está corriendo en 
+nuestra máquina, por lo que en cada una de estas va a ser distinto.
+
+Si guardamos la llave en nuestro home, bastará con agregar la llave a nuestro servidor con 
+
+                                ssh-add ~/.shh/id_rsa
+
+######## para agregar la llave en MAC #########
+
+En mac, para evaluar el "ssh agent", debemos utilizar el comando: 
+
+                                eval "$(ssh-agent -s)"
+
+Debemos modificar el archivo "config" en la carpeta config" o en su defecto, crear la carpeta "config" con lo siguiente adentro
+
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentiFile ~/.ssh/id_rsa 
+
+
+
+y finalmente, agregamos la llave (estando en home)
+
+                        ssh-add -K ~/.ssh/id_rsa
+
+(la K es por keychain, una aplicación de MAC donde se guardan llaves y contraseñas para guardarlas en iCloud)En caso de que de error, sólo debemos remover el "-K" en
+
+################
+
+Guardamos la llave pública y agregamos a GitHub, después copiamos la liga "SSH-URL" de nuestro repositorio, vamos a nuestra carpeta del proyecto y cambiar el URL de "origin" con 
+
+                        git remote set-origin <URL-SSH> 
+
+Finalmente, antes de hacer un commit en nuestro proyecto, debemos traer la última versión del servidor con 
+
+                        git pull 
+
+aceptamos, por último, hacemos un merge (nuevamente con "git push origin master") en
 
