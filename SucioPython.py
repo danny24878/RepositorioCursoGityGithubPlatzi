@@ -1,0 +1,7 @@
+a = '''
+|
+dasdfasdfsdffkffff
+
+|
+'''
+print(a)
