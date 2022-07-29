@@ -33,6 +33,8 @@ Si queremos deshacernos de la base que va ser mandada al repositorio, tenenmos e
 Ahora que el archivo que está en estado 'cached', podemos subirlo (commit), con el comando:
 
                                 'git commit'
+
+                                
 Sin embargo, es no suficiene, se considera una buena práctica dejar un mensaje con cada commit, simplemente
 agregando -m "<mensaje>" PEEEEEEEEERO nos falta algo muy importante que no nos dejará completar el commit
 hasta que nos identifiquemos con Git agregando nuesto nombre correo etc...
@@ -57,15 +59,19 @@ comando:
 
 Así como:
 
-                            " git config --globla user.email <email usser> "
+                        
+                         " git config --globla user.email <email usser> "
+
 
 Finalmente, daremos otros comandos que pueden ser de utilidad:
 
 Si por algún motivo te equivocaste en el nombre o email que configuraste al principio, lo puedes modificar de la siguiente manera:
                         
+                        
                         "git config --global --replace-all user.name "<username>" "
 
 O si lo deseas eliminar y añadir uno nuevo
+                        
                         
                         "git config --global --unset-all user.name :Elimina el nombre del usuario "
 
@@ -75,9 +81,11 @@ para despúes:
 
 
 
-------------------------- Analizar cambios en los archivos en e proyecto con Git --------------------------
+---------------------- Analizar cambios en los archivos en e proyecto con Git --------------------------
 Con el comando: 
+                                
                                 "git log <archivo>"
+
 Podemos ver todos los commits que hemos hecho en nuestro archivo donde señala su TAG, rama, autor, fecha y mensaje 
 con el que fue subido al repositorio
 
@@ -85,12 +93,15 @@ El comando:
 
                                     "git show" 
 
+
 nos muestra los cambios que han existido sobre un archivo de nuestro último commit y es muy útil para detectar cuándo se produjeron ciertos
 cambios, qué se rompió y cómo lo podemos solucionar. Pero podemos ser más detallados.
 
 Si queremos ver la diferencia entre una versión y otra, no necesariamente todos los cambios desde la creación del
 archivo, podemos usar el comando:
+                                   
                                     "git diff <commit a> <commit b >"
+
 
 donde "<commit a>" y "<commit b> son los ID. Es siempre recomendable utilizar los commit más viejos al principio, 
 de esta manera, es más fácil e intuitivo leer lo que nos devuelve git ya que, git toma el primer commit como el más 
@@ -126,7 +137,7 @@ Pero, tenemos el riesgo de cometer errores al momento de hacer un merge y este n
 directa será necesária. 
 
 
------------------------- Volver a versiones pasadas de nuestro repositorio utilizando reset y checkout --------------------------------
+-----------Volver a versiones pasadas de nuestro repositorio utilizando reset y checkout --------------------------------
 
 Primero, podemos ver todos los commits con sus I.D hechos enlistados con:
 
@@ -208,7 +219,7 @@ para saltarnos el "add" ####################
                                         
                                     git branch + <name>
 
-Si querémos ver una lista de todas las ramas,así como nuestra ubicación dentro de estas, sólo necesitamos usar "git branch +
+Si querémos ver una lista de todas las ramas,así como nuestra ubicación dentro de estas, sólo necesitamos usar "git branch"
 Una vez creada nuestra nueva rama, podemos movernos a otra con "git checkout + <name>" (de la rama que deseamos ir).
 finalmente, para juntar las ramas, lo hacemos con 
 
@@ -229,7 +240,7 @@ finalmente, para revertir un "merge", basta con
 
 -------------------------------------- Introducción a GitHub ----------------------------------------
 
-Para subir proyectos a GitHub, debemos tener preparado el línk en HTTPS de nuestro repositorio remoto y agregarlo con el comando:
+Para subir proyectos a GitHub, debemos tener preparado el línk en HTTPS de nuestro repositorio remoto y agregarlo a nuestro gti con el comando:
 
                             git remote add <origin> + URL 
 
@@ -238,7 +249,7 @@ Para subir proyectos a GitHub, debemos tener preparado el línk en HTTPS de nues
 $$$$$$$$$$$$$ Disclamer $$$$$$$$$$$$$$$$
 
 A lo largo de las notas, hemos utilizado el nombre de master como carpeta(ra) principal de trabajo, sin embargo por cuestiones políticas y sencibilidad al movimiento BLM (2021), 
-éste ya no va a ser el nombre para la carpeta(ra) principal que estarémos utilizando para esta carpeta(ram) en GitHub, el cual lleva el nombre de main; por lo que tenemos dos opciónes
+éste ya no va a ser el nombre para la carpeta(ra) principal que estarémos utilizando para esta carpeta(ra) en GitHub, el cual lleva el nombre de main; por lo que tenemos dos opciónes
 
 1. Cambiar el nombre de nuestra carpeta(rama), en el repositorio local con:
 
@@ -256,15 +267,26 @@ Verificamos que la URL se haya guardado:
 
                     git remote (+ -v (v de be verbal si queremos ver las URL de push y pull)
 
-Debemos traer la versión del repositorio remoto y hacemos merge para crear un commit con los archivos de ambas partes. Podemos usar 'git fech' y 'git merge' o 
+Debemos traer la versión del repositorio remoto y hacemos merge para crear un commit con los archivos de ambas partes. Podemos usar 'git fetch' y 'git merge' o 
 
                     git pull origin master --allow-unrelated-histories
 
-esto es para forzar el merge entre ramas del repositorio remoto con el local.
+esto es para forzar el merge entre ramas del repositorio remoto con el local. Destaquemos que "git fetch" trae la información a nuestro repositorio, pero no lo integra a nuestro proyecto,
+lo cual es útil si queremos revisar lo que hay en el repositorio remoto antes de integrarlo y modificar el nuestro
 
 Finalmente podemos guardar nuetro escritorio local con 
 
                     git push origin master(:main)
+
+##########
+Cada vez que querramos subir algo a nuestro repositorio en la red, primero debemos traer nuestro repositorio remoto al local para que esté actualizado de manera local con
+
+                            git pull <origin> + <master> 
+
+después, lo podemos enviar con 
+
+                            git push <origin> + <master> 
+
 
 --------------------------------- Configurar llaves SSH en local -------------------------------
 
@@ -314,11 +336,103 @@ y finalmente, agregamos la llave (estando en home)
 
 Guardamos la llave pública y agregamos a GitHub, después copiamos la liga "SSH-URL" de nuestro repositorio, vamos a nuestra carpeta del proyecto y cambiar el URL de "origin" con 
 
-                        git remote set-origin <URL-SSH> 
+                        
+                        git remote set-origin <URL-SSH>
+
 
 Finalmente, antes de hacer un commit en nuestro proyecto, debemos traer la última versión del servidor con 
 
-                        git pull 
+                        
+                              git pull 
+
 
 aceptamos, por último, hacemos un merge (nuevamente con "git push origin master") en
+
+
+------------------- Tag y Versiones en Git y GitHub ------------------------------
+
+Con 
+
+                        git log --all --graph --decorate --oneline
+
+
+Podemos ver un arbol como se han desarollado las ramas (con colores) sobre cómo se han desarrollado las ramas a lo largo del proyecto
+además, la bandera "oneline" lo resume.
+
+Los tags o etiquetas nos permiten asignar versiones a los commits con coambios más importantes o significativos de nuestro proyecto. 
+
+Podemos hacerlo con el comando: 
+
+                        
+                        git tag -a <nombre del tag> + -m "<mensaje>" + <id del tag> 
+
+
+donde la "-a" signigica que vamos a agregar un tag. La convención es poner como nombre "v0.1" o algo así, a cada versión 
+
+Podemos ver cuantos tags hay con solo "git tag", pero para ver que commit está cada tag con:
+
+                        
+                        git show-ref --tags 
+
+
+para enviar el tag al repositorio local, lo hacemos con 
+
+                        
+                        git push origin --tags
+
+
+(recordemos siempre hacer un pull antes de cualquier cosa)  
+
+Para borrar un tag, debemos hacerlo primero en nuestro repositorio local y después en el virtual con 
+
+
+                        git tag -d + <nombre> 
+
+Para borrar el tag desde la terminal de nuestro repositorio remoto, lo hacemos con
+
+
+                        git push origin :refs/tags/<nombre>
+
+
+-------------------------- Manejo de ramas en GitHub --------------------------
+
+ #### mostrar ramas en git ####
+
+ mostrar las ramas que existen y un poco de su historial
+
+                    git show-branch (--all 'para más datos') ####
+
+También tenemos una forma de visualizar nuestro historial de las ramas con gitk (el cual debemos de instalar)
+y debemos tener un servidor externo en nuestro pc si queremos correrlo en WSL como Xlaunch
+
+Para manejar ramas en GitHub, basta con mandar todas las ramas que deseémos a éste (podemos hacerlo sobre el mismo push)
+
+--------------------- Configurar multiples colaboradores en un repositorio de GitHub ----------------
+
+Para traer un repositorio remoto de GitHub, es con: 
+
+                                        git clone + <<HTTPS>>
+
+Para agregar (o entrar a un proyecto) de GitHub, debemos hacerlo desde la página en:
+
+Repositoro -> Setting -> Collaborators 
+
+Ahí agregamos el email o username de los colaboradores, pero no sin antes tener configurado el email público del colaborador 
+configurado, de lo contrario, debe de ser agregado con con su username  
+
+------------------ Flujo de trabajo con Pull requests --------------------------
+
+ Feature : caracteríscitca (de lo que sea que estemos trabajando) del proyecto, ya sea del master o del staging dev. 
+ (no confundir con el staging de git) 
+
+El staging dev es una rama similar al master, el cual tiene su propio server de pruebas, una rama antes del master. Al crear 
+un featuere, antes de hacer merge con staging dev., debemos hacer algo llamado "pull request" O "merge recuest", (P.R.), esto lo podemos ver como 
+un intermedio entre merge y el staging de git el cual, se sube a la nube y puede ser revisado por todo el equipo de desarrollo, una 
+vez aprovado, debemos hacer, nuvamente, un P.R. con master
+
+Notemos que el pull request es exclusivo de GitHub, son la base del proyectos Opern Source. 
+
+Al administrador de aprobar los P.R. son llamados: DevOps
+
+--------------------- Utilizando Pull Request en GitHub ------------
 
